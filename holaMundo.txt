@@ -1,3 +1,5 @@
 Prueba de subida y commit de git con archivo de texto.
 1. Jorge Saul PC escritorio
 2. Jorge Saul portatil
+3. En clase
+
