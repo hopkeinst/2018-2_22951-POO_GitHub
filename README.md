@@ -18,6 +18,6 @@ Docente: Jathinson Meneses.
 **Estudiantes**
 >Erika Yamile Lache Blanco - 2140348
 >
->Dairon Alexis Vallejo Vallejo - 2171996 \n
+>Dairon Alexis Vallejo Vallejo - 2171996
 >
 >Jorge Saul Castillo Jaimes - 2111127
