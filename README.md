@@ -12,7 +12,7 @@ Docente: Jathinson Meneses.
 >
 >Jorge Saul Castillo Jaimes - 2111127
 
-**Archivo** Los podrás encontrar en la carpeta [Taller03](Taller03) bajo los nombres `holaMundo01.txt`, `holaMundo02.txt`y `holaMundo03.txt`.
+**Archivos** Los podrás encontrar en la carpeta [Taller03](Taller03) bajo los nombres `holaMundo01.txt`, `holaMundo02.txt`y `holaMundo03.txt`.
 
 #### Taller # 4 - Iniciación en UML
 **Estudiantes**
