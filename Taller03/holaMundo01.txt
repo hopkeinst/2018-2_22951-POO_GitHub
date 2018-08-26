@@ -3,4 +3,4 @@ Prueba de subida y commit de git con archivo de texto.
 2. Jorge Saul portatil
 3. En clase
 4. Erika Pc escritorio
-
+5. Erika PC Escritorio 20180826
