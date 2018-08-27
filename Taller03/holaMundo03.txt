@@ -1,2 +1,5 @@
 Archivo para el punto 02 del taller de GIT.
-Primer archivo en subirse par agenerar 'conflicto'
+Primer archivo en subirse para generar 'conflicto'
+
+
+Edición para el punto 03 - Conflicto en un mismo archivo
