@@ -26,5 +26,5 @@ El taller consistió en trabajar sobre un repositorio de **_git_** y que ambas p
 
 El taller consistió en elaborar un diagrama de clases bajo el estándar UML para una biblioteca municipal. 
 
-**Archivos** Los podrás encontrar en la carpeta [Taller04](Taller04) bajos los nombres `Biblioteca.mjl`y `Biblioteca.png`
+**Archivos** Los podrás encontrar en la carpeta [Taller04](Taller04) bajos los nombres `Biblioteca.mdj`y `Biblioteca.png`
 
