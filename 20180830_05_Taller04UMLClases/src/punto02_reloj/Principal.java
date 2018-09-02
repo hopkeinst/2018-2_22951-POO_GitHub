@@ -18,10 +18,12 @@ public class Principal extends JFrame implements ActionListener{
  * */
 	
 //Label = texto a mostrarse
-    JLabel  lTitulo,lInfo,lFecHor;
+    JLabel  lTitulo,lInfo;
 //Botones
     JButton bConfigReloj,bCrono,bAlarma,bSalir;
     Relooj reloj;
+    
+    static JLabel lFecHor = new JLabel();;
 
     public Principal(Relooj reloj) {
 //super() para usar el constructor de la clase padre JFrame
@@ -52,14 +54,13 @@ public class Principal extends JFrame implements ActionListener{
         this.setResizable(false);
 //setDefaultCloseOperation para definir que se hace cuando se cierra la ventana
 // (JFrame.EXIT_ON_CLOSE) es para terminar el programar al cerrar ventana
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     }
 
     public void iniciaElementos() {
 //Se crean los elementos que van en la ventana
         lTitulo = new JLabel();
         lInfo = new JLabel();
-        lFecHor = new JLabel();
         bConfigReloj = new JButton();
         bCrono = new JButton();
         bAlarma = new JButton();
@@ -79,8 +80,12 @@ public class Principal extends JFrame implements ActionListener{
         lInfo.setBounds(10, 40, 330, 20);
         lInfo.setHorizontalAlignment((int) CENTER_ALIGNMENT);
         
-        lFecHor.setText("-");
-        println(Integer.toString(reloj.anoAct));
+        lFecHor.setText(Byte.toString(reloj.diaAct)+"-"+Byte.toString(reloj.mesAct)+"-"+Integer.toString(reloj.anoAct)+" "+Byte.toString(reloj.horAct)+":"+Byte.toString(reloj.minAct)+":"+Byte.toString(reloj.segAct));
+        if(reloj.isFor24() == false) {
+        	lFecHor.setText(lFecHor.getText()+reloj.amPm);
+        	println(lFecHor.getText());
+        }
+        lFecHor.setBounds(20,175,250,30);
 //Al botón bConfigReloj algunas similares que con los label
         bConfigReloj.setText("Configurar Reloj (hora y fecha)");
         bConfigReloj.setBounds(20, 70, 310, 25);
@@ -102,6 +107,7 @@ public class Principal extends JFrame implements ActionListener{
 //Y añadimos los elementos creados y configurados a esta ventana
         this.add(lTitulo);
         this.add(lInfo);
+        this.add(lFecHor);
         this.add(bConfigReloj);
         this.add(bCrono);
         this.add(bAlarma);
@@ -113,7 +119,7 @@ public class Principal extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 //En este caso pregunta si la acción realizada es sobre el elemento bConfigReloj
     	if (e.getSource() == bConfigReloj) {
-    		
+    		VConfigReloj vConfigReloj = new VConfigReloj(reloj);
     	}
     	if (e.getSource() == bCrono) {
     		
