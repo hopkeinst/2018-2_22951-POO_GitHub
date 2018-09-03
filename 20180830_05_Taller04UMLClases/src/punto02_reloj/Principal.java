@@ -127,7 +127,12 @@ public class Principal extends JFrame implements ActionListener{
     		vConfigReloj.setVisible(true);
     	}
     	if (e.getSource() == bCrono) {
-    		
+    		this.dispose();
+    		boolCrono = true;
+    		boolConfigReloj = false;
+    		boolAlarma = false;
+    		VCronometro vCrono = new VCronometro(reloj);
+    		vCrono.setVisible(true);
     	}
     	if (e.getSource() == bAlarma) {
     		

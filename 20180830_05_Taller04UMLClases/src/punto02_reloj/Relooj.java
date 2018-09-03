@@ -23,6 +23,14 @@ public class Relooj extends Principal{
 //Se crea el objeto para el manejo del tiempo
 	Calendar tiempo = Calendar.getInstance();
 	
+//Timer para el cronómetro, y se deja vacía para asignarle las características
+// en el método correspondiente, y pararlo en otro método
+	Timer tCrono = null;
+	byte horCro = 0;
+	byte minCro = 0;
+	byte segCro = 0;
+	int mSegCro = 0;
+	
 // ### CONSTRUCTORES VARIOS
 
 //Constructor que toma el tiempo actual,pero escogiendo formato 12 o 24
@@ -117,9 +125,65 @@ public class Relooj extends Principal{
 	    		if(isFor24() == false) {
 	            	Principal.lFecHor.setText(Principal.lFecHor.getText()+amPm);
 	            }
+	    		if(Principal.boolCrono == true) {
+	    			VCronometro.lActual.setText(Byte.toString(diaAct)+"-"+Byte.toString(mesAct)+"-"+Integer.toString(anoAct)+" "+Byte.toString(horAct)+":"+Byte.toString(minAct)+":"+Byte.toString(segAct));
+	    			if(isFor24() == false) {
+	    				VCronometro.lActual.setText(VCronometro.lActual.getText()+amPm);
+		            }
+	    		}
 	        }
 	    };
 	    tempo01.schedule(rSegundo, 0, 1000);
+	}
+	
+	void iniciaCrono() {
+		VCronometro.bIniciar.setEnabled(false);
+		VCronometro.bReiniciar.setEnabled(true);
+		VCronometro.bPausar.setEnabled(true);
+		tCrono = new Timer();
+		TimerTask mSeg = new TimerTask(){
+	    	@Override
+	    	public void run()
+	    	{
+	    		mSegCro+=50;
+	    		if(mSegCro >= 1000) {
+	    			segCro++;
+	    			mSegCro = 0;
+	    		}
+	    		if(segCro >= 60) {
+	    			minCro++;
+	    			segCro = 0;
+	    		}
+	    		if(minCro >= 60) {
+	    			horCro++;
+	    			minCro = 0;
+	    		}
+	    		VCronometro.lCrono.setText(Byte.toString(horCro)+":"+Byte.toString(minCro)+":"+Byte.toString(segCro)+":"+Integer.toString(mSegCro/10));
+	    	}
+	    };
+	    tCrono.schedule(mSeg, 0, 50);
+	}
+	
+	void pausaCrono() {
+		VCronometro.bIniciar.setEnabled(true);
+		VCronometro.bReiniciar.setEnabled(true);
+		VCronometro.bPausar.setEnabled(false);
+		tCrono.cancel();
+	}
+	
+	void reiniciaCrono() {
+		mSegCro = 0;
+		segCro = 0;
+		minCro = 0;
+		horCro = 0;
+		if(VCronometro.bPausar.isEnabled() == false) {
+			VCronometro.bReiniciar.setEnabled(false);
+		}else {
+			VCronometro.bIniciar.setEnabled(false);
+			VCronometro.bReiniciar.setEnabled(true);
+			VCronometro.bPausar.setEnabled(true);
+		}
+		VCronometro.lCrono.setText(Byte.toString(horCro)+":"+Byte.toString(minCro)+":"+Byte.toString(segCro)+":"+Integer.toString(mSegCro/10));
 	}
 
 	public static void setFor24(boolean for24) {
@@ -195,7 +259,39 @@ public class Relooj extends Principal{
 	}
 
 
-// Funciones creadas para ahorrar escribir código de imprimir
+public byte getHorCro() {
+		return horCro;
+	}
+
+	public void setHorCro(byte horCro) {
+		this.horCro = horCro;
+	}
+
+	public byte getMinCro() {
+		return minCro;
+	}
+
+	public void setMinCro(byte minCro) {
+		this.minCro = minCro;
+	}
+
+	public byte getSegCro() {
+		return segCro;
+	}
+
+	public void setSegCro(byte segCro) {
+		this.segCro = segCro;
+	}
+
+	public int getmSegCro() {
+		return mSegCro;
+	}
+
+	public void setmSegCro(int mSegCro) {
+		this.mSegCro = mSegCro;
+	}
+
+	// Funciones creadas para ahorrar escribir código de imprimir
 	public static void print(String string) {
 		System.out.print(string);
 	}
