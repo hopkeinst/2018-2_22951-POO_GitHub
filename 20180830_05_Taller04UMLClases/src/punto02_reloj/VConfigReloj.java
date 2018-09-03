@@ -269,6 +269,7 @@ public class VConfigReloj  extends JFrame implements ActionListener, ChangeListe
     		this.dispose();
     		Principal vPrincipal = new Principal(reloj);
     		vPrincipal.setVisible(true);
+    		Principal.boolConfigReloj = false;
     	}
 		if(e.getSource() == bGuardar) {
 			reloj.setAnoAct((int) sAno.getValue());

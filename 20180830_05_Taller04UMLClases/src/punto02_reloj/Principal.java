@@ -135,7 +135,12 @@ public class Principal extends JFrame implements ActionListener{
     		vCrono.setVisible(true);
     	}
     	if (e.getSource() == bAlarma) {
-    		
+    		this.dispose();
+    		boolCrono = false;
+    		boolConfigReloj = false;
+    		boolAlarma = true;
+    		VAlarma vAlarma = new VAlarma(reloj);
+    		vAlarma.setVisible(true);
     	}
     	if (e.getSource() == bSalir) {
     		System.exit(0);
@@ -149,7 +154,6 @@ public class Principal extends JFrame implements ActionListener{
     	Principal V = new Principal(rel);
 //Y se hace visible la ventana
         V.setVisible(true);
-		
     }
     
 // Funciones creadas para ahorrar escribir código de imprimir en consola

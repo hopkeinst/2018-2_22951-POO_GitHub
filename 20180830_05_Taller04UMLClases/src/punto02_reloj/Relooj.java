@@ -1,11 +1,15 @@
 package punto02_reloj;
 
+import java.awt.Toolkit;
 //Importamos librerías de tiempo 
 //import java.util.Timer;
 //import java.util.TimerTask;
 import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 
 public class Relooj extends Principal{
 
@@ -30,6 +34,13 @@ public class Relooj extends Principal{
 	byte minCro = 0;
 	byte segCro = 0;
 	int mSegCro = 0;
+	
+//Atributos para la diferencia y armar la alarma
+	byte difHorAla = 0;
+	byte difMinAla = 0;
+	byte difSegAla = 0;
+	boolean fAlarma = false;
+	JDialog alerta;
 	
 // ### CONSTRUCTORES VARIOS
 
@@ -131,9 +142,60 @@ public class Relooj extends Principal{
 	    				VCronometro.lActual.setText(VCronometro.lActual.getText()+amPm);
 		            }
 	    		}
+	    		if(Principal.boolAlarma == true) {
+	    			VAlarma.lActual2.setText(Byte.toString(diaAct)+"-"+Byte.toString(mesAct)+"-"+Integer.toString(anoAct)+" "+Byte.toString(horAct)+":"+Byte.toString(minAct)+":"+Byte.toString(segAct));
+	    			if(isFor24() == false) {
+	    				VAlarma.lActual2.setText(VAlarma.lActual2.getText()+amPm);
+		            }
+	    			calcularDiferenciaAlarma();
+	    		}
 	        }
 	    };
 	    tempo01.schedule(rSegundo, 0, 1000);
+	}
+	
+	void calcularDiferenciaAlarma() {
+		difSegAla = (byte)((byte)((int)VAlarma.sSeg.getValue())-segAct);
+		difMinAla = (byte)((byte)((int)VAlarma.sMin.getValue())-minAct);
+		difHorAla = (byte)((byte)((int)VAlarma.sHor.getValue())-horAct);
+		if(difSegAla < 0) {
+			difMinAla--;
+			difSegAla+=60;
+		}
+		if(difMinAla < 0) {
+			difHorAla--;
+			difMinAla+=60;
+		}
+		if(difHorAla < 0) {
+			difHorAla+=24;
+		}
+		if(fAlarma == true) {
+			VAlarma.lDif2.setText(Byte.toString(difHorAla)+":"+Byte.toString(difMinAla)+":"+Byte.toString(difSegAla));
+		}else {
+			VAlarma.lDif2.setText("-:-:-");
+		}
+		if((difHorAla == 0) && (difMinAla == 0) && (difSegAla == 0) && (fAlarma == true)) {
+    		VAlarma.bIniciar.setEnabled(true);
+    		VAlarma.bParar.setEnabled(false);
+    		VAlarma.sSeg.setEnabled(true);
+    		VAlarma.sMin.setEnabled(true);
+    		VAlarma.sHor.setEnabled(true);
+    		if(isFor24() == false) {
+    			VAlarma.rbAm.setEnabled(true);
+    			VAlarma.rbPm.setEnabled(true);
+    			VAlarma.lAmPm.setEnabled(true);
+    		}
+    		fAlarma = false;
+    		difHorAla = 0;
+    		difMinAla = 0;
+    		difSegAla = 0;
+    		println("ALARMA!!!");
+    		this.dispose();
+    		Alerta vAlerta = new Alerta();
+    		vAlerta.setVisible(true);
+    		Toolkit.getDefaultToolkit().beep();
+    		
+		}
 	}
 	
 	void iniciaCrono() {
