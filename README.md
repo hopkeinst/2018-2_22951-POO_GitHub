@@ -28,3 +28,14 @@ El taller consistió en elaborar un diagrama de clases bajo el estándar UML par
 
 **Archivos** Los podrás encontrar en la carpeta [Taller04](Taller04) bajos los nombres `Biblioteca.mdj`y `Biblioteca.png`
 
+#### Taller # 4 - UML y OOP - Aplicar un esquema de UML en Eclipse + Reloj en Eclipse
+**Estudiantes**
+>Erika Yamile Lache Blanco - 2140348
+>
+>Dairon Alexis Vallejo Vallejo - 2171996
+>
+>Jorge Saul Castillo Jaimes - 2111127
+
+El taller consistió en elaborar una programación basado en un diagrama de clases bajo el estándar UML (asignarle métodos) con objetos y clases. El segundo punto en la creación de una clase _Reloj_ con métodos, atributos y permitirle editar el reloj, tener un cronómetro y una alarma.
+
+**Archivos** Los podrás encontrar en la carpeta [20180830_05_Taller04UMLClases](20180830_05_Taller04UMLClases) con los códigos y archivos fuente. Los archivos _complementarios_ (StarUML, imágenes, videos) están en la carpeta [ArchivosAdicionales](20180830_05_Taller04UMLClases/ArchivosAdicionales)
