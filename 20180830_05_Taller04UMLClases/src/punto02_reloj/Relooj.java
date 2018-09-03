@@ -88,7 +88,10 @@ public class Relooj extends Principal{
 	    				}
 	    			}
 	    		}
-	    		if((diaAct >= 29) && (mesAct == 2)) {
+	    		if((diaAct >= 29) && (mesAct == 2) && ((anoAct % 4) != 0)) {
+	    			mesAct++;
+	    			diaAct = 1;
+	    		}else if((diaAct >= 30) && (mesAct == 2) && ((anoAct % 4) == 0)) {
 	    			mesAct++;
 	    			diaAct = 1;
 	    		}else if((diaAct >= 31) && ((mesAct == 4) || (mesAct == 6) || (mesAct == 9) || (mesAct == 11))) {
@@ -105,6 +108,12 @@ public class Relooj extends Principal{
 //Y se le asigma al label que está en la ventana principal mostrando
 // la hora y fecha, con el cambio correspondiente
 	    		Principal.lFecHor.setText(Byte.toString(diaAct)+"-"+Byte.toString(mesAct)+"-"+Integer.toString(anoAct)+" "+Byte.toString(horAct)+":"+Byte.toString(minAct)+":"+Byte.toString(segAct));
+	    		if(Principal.boolConfigReloj == true) {
+	    			VConfigReloj.lActual2.setText(Byte.toString(diaAct)+"-"+Byte.toString(mesAct)+"-"+Integer.toString(anoAct)+" "+Byte.toString(horAct)+":"+Byte.toString(minAct)+":"+Byte.toString(segAct));
+	    			if(isFor24() == false) {
+		            	VConfigReloj.lActual2.setText(VConfigReloj.lActual2.getText()+amPm);
+		            }
+	    		}
 	    		if(isFor24() == false) {
 	            	Principal.lFecHor.setText(Principal.lFecHor.getText()+amPm);
 	            }
@@ -112,30 +121,86 @@ public class Relooj extends Principal{
 	    };
 	    tempo01.schedule(rSegundo, 0, 1000);
 	}
-	
-	public void asignarFecha() {
-		
-	}
-	
-	public static void main(String arglist[]) {
-		
-	}
-	
-// Funciones creadas para ahorrar escribir código de imprimir
-	public static void print(String string) {
-		System.out.print(string);
-	}
-			
-	public static void println(String string) {
-		System.out.println(string);
-	}
 
 	public static void setFor24(boolean for24) {
 		Relooj.for24 = for24;
 	}
 
-	public static boolean isFor24() {
+	public boolean isFor24() {
 		return for24;
 	}
 
+	public int getAnoAct() {
+		return anoAct;
+	}
+
+	public void setAnoAct(int anoAct) {
+		this.anoAct = anoAct;
+	}
+
+	public byte getMesAct() {
+		return mesAct;
+	}
+
+	public void setMesAct(byte mesAct) {
+		this.mesAct = mesAct;
+	}
+
+	public byte getDiaAct() {
+		return diaAct;
+	}
+
+	public void setDiaAct(byte diaAct) {
+		this.diaAct = diaAct;
+	}
+
+	public byte getHorAct() {
+		return horAct;
+	}
+
+	public void setHorAct(byte horAct) {
+		this.horAct = horAct;
+	}
+
+	public byte getMinAct() {
+		return minAct;
+	}
+
+	public void setMinAct(byte minAct) {
+		this.minAct = minAct;
+	}
+
+	public byte getSegAct() {
+		return segAct;
+	}
+
+	public void setSegAct(byte segAct) {
+		this.segAct = segAct;
+	}
+
+	public String getAmPm() {
+		return amPm;
+	}
+
+	public void setAmPm(String amPm) {
+		this.amPm = amPm;
+	}
+
+	public Calendar getTiempo() {
+		return tiempo;
+	}
+
+	public void setTiempo(Calendar tiempo) {
+		this.tiempo = tiempo;
+	}
+
+
+// Funciones creadas para ahorrar escribir código de imprimir
+	public static void print(String string) {
+		System.out.print(string);
+	}
+				
+	public static void println(String string) {
+		System.out.println(string);
+	}
 }

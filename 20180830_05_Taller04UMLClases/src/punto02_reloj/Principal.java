@@ -23,7 +23,11 @@ public class Principal extends JFrame implements ActionListener{
     JButton bConfigReloj,bCrono,bAlarma,bSalir;
     Relooj reloj;
     
-    static JLabel lFecHor = new JLabel();;
+    static JLabel lFecHor = new JLabel();
+    
+    static boolean boolConfigReloj = false;
+    static boolean boolCrono = false;
+    static boolean boolAlarma = false;
 
     public Principal(Relooj reloj) {
 //super() para usar el constructor de la clase padre JFrame
@@ -85,7 +89,7 @@ public class Principal extends JFrame implements ActionListener{
         	lFecHor.setText(lFecHor.getText()+reloj.amPm);
         	println(lFecHor.getText());
         }
-        lFecHor.setBounds(20,175,250,30);
+        lFecHor.setBounds(30,175,230,30);
 //Al botón bConfigReloj algunas similares que con los label
         bConfigReloj.setText("Configurar Reloj (hora y fecha)");
         bConfigReloj.setBounds(20, 70, 310, 25);
@@ -96,11 +100,9 @@ public class Principal extends JFrame implements ActionListener{
         bCrono.setText("Cronómetro");
         bCrono.setBounds(20, 105, 310, 25);
         bCrono.addActionListener(this);
-        
         bAlarma.setText("Alarma");
         bAlarma.setBounds(20, 140, 310, 25);
         bAlarma.addActionListener(this);
-        
         bSalir.setText("Salir");
         bSalir.setBounds(260, 175, 70, 30);
         bSalir.addActionListener(this);
@@ -119,7 +121,10 @@ public class Principal extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 //En este caso pregunta si la acción realizada es sobre el elemento bConfigReloj
     	if (e.getSource() == bConfigReloj) {
+    		this.dispose();
+    		boolConfigReloj = true;
     		VConfigReloj vConfigReloj = new VConfigReloj(reloj);
+    		vConfigReloj.setVisible(true);
     	}
     	if (e.getSource() == bCrono) {
     		
@@ -139,11 +144,12 @@ public class Principal extends JFrame implements ActionListener{
     	Principal V = new Principal(rel);
 //Y se hace visible la ventana
         V.setVisible(true);
+		
     }
     
 // Funciones creadas para ahorrar escribir código de imprimir en consola
  	public static void print(String string) {
- 		System.out.print(string);;
+ 		System.out.print(string);
  	}
  			
  	public static void println(String string) {
