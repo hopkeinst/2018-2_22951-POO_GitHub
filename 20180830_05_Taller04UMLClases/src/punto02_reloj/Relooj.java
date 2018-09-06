@@ -230,7 +230,9 @@ public class Relooj extends Principal{
 		VCronometro.bIniciar.setEnabled(true);
 		VCronometro.bReiniciar.setEnabled(true);
 		VCronometro.bPausar.setEnabled(false);
-		tCrono.cancel();
+		if(tCrono != null) {
+			tCrono.cancel();
+		}
 	}
 	
 	void reiniciaCrono() {
