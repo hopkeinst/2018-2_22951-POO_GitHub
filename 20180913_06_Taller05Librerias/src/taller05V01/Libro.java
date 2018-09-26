@@ -12,13 +12,19 @@ public class Libro {
 	int pags;
 	int aPub;
 	int nEdic;
+	int posCP;
+	int posA;
 		
 // OBJETOS
-	ArrayList <Libro> libros;
+	ArrayList <Integer> autores;
+	ArrayList <Capitulo> capitulos;
 	static Libreria l;
 	static Estanteria e;
 	static Libro b;
 	static Capitulo c;
+	static Autor a;
+	static CasaPublicacion cp;
+	static Capitulo cap;
 	static Scanner sc;
 		
 // VARIABLES
@@ -26,9 +32,12 @@ public class Libro {
 	static int i,j,k;
 	String nEst;
 	boolean menuB = true;
+	int maxCap = 0;
 
 // CONSTRUCTORES
 	public Libro(String titulo,String iSBN,int pags,int aPub,int nEdic) {
+		autores = new ArrayList<Integer>();
+		capitulos = new ArrayList<Capitulo>();
 		this.titulo = titulo;
 		this.iSBN = iSBN;
 		this.pags = pags;
@@ -74,7 +83,6 @@ public class Libro {
 		e.libros.remove(pos);
 	}
 	
-	
 // ADICIONALES
 	
 	static void print(String s) {
@@ -83,13 +91,6 @@ public class Libro {
 		
 	static void println(String s) {
 		System.out.println(s);
-	}
-		
-	void listarLibros() {
-		for(i=0;i<this.libros.size();i++) {
-			b = this.libros.get(i);
-			println("Lib #"+(i+1)+"=['ISBN'='"+b.iSBN+"' | 'Título'='"+b.titulo+"']");
-		}
 	}
 	
 	static void esperar() {
