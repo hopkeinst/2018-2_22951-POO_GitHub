@@ -50,5 +50,5 @@ El taller consistió en elaborar una programación basado en un diagrama de clas
 
 El taller consistió en elaborar una programación basada en un diagrama de clases bajo el estándar UML, aplicarle métodos y realizar la implementación total para que funciones una Biblioteca, se pueda manejar por pisos, estanterías y libros.
 
-**Archivos** Los podrás encontrar en la carpeta [20180830_06_Taller05Librerias](20180830_06_Taller05Librerias) con los códigos y archivos fuente. El archivo con la información y requerimientos se encuentra dentro y se llama `taller 5.pdf`.
+**Archivos** Los podrás encontrar en la carpeta [20180913_06_Taller05Librerias](20180913_06_Taller05Librerias) con los códigos y archivos fuente. El archivo con la información y requerimientos se encuentra dentro y se llama `taller 5.pdf`.
 
