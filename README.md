@@ -39,3 +39,16 @@ El taller consistió en elaborar un diagrama de clases bajo el estándar UML par
 El taller consistió en elaborar una programación basado en un diagrama de clases bajo el estándar UML (asignarle métodos) con objetos y clases. El segundo punto en la creación de una clase _Reloj_ con métodos, atributos y permitirle editar el reloj, tener un cronómetro y una alarma.
 
 **Archivos** Los podrás encontrar en la carpeta [20180830_05_Taller04UMLClases](20180830_05_Taller04UMLClases) con los códigos y archivos fuente. Los archivos _complementarios_ (StarUML, imágenes, videos) están en la carpeta [ArchivosAdicionales](20180830_05_Taller04UMLClases/ArchivosAdicionales)
+
+#### Taller # 5 - UML y OOP - Aplicar un esquema de UML en eclipse para una Biblioteca
+**Estudiantes**
+>Erika Yamile Lache Blanco - 2140348
+>
+>Dairon Alexis Vallejo Vallejo - 2171996
+>
+>Jorge Saul Castillo Jaimes - 2111127
+
+El taller consistió en elaborar una programación basada en un diagrama de clases bajo el estándar UML, aplicarle métodos y realizar la implementación total para que funciones una Biblioteca, se pueda manejar por pisos, estanterías y libros.
+
+**Archivos** Los podrás encontrar en la carpeta [20180830_06_Taller05Librerias](20180830_06_Taller05Librerias) con los códigos y archivos fuente. El archivo con la información y requerimientos se encuentra dentro y se llama `taller 5.pdf`.
+
