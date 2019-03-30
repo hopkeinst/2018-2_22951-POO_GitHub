@@ -52,3 +52,38 @@ El taller consistió en elaborar una programación basada en un diagrama de clas
 
 **Archivos** Los podrás encontrar en la carpeta [20180913_06_Taller05Librerias](20180913_06_Taller05Librerias) con los códigos y archivos fuente. El archivo con la información y requerimientos se encuentra dentro y se llama `taller 5.pdf`.
 
+#### Taller # 6 - OOP - Aplicar un esquema de UML en eclipse para una Sistema de Alquiler de Naves, con Herencia
+**Estudiantes**
+>Erika Yamile Lache Blanco - 2140348
+>
+>Dairon Alexis Vallejo Vallejo - 2171996
+>
+>Jorge Saul Castillo Jaimes - 2111127
+
+El taller consistió en elaborar una programación basada en un diagrama de clases, implementar algunos métodos agregados en el diagrama y añadir otros e incluir herencia. Es un software para alquiler de naves espaciales.
+
+**Archivos** Los podrás encontrar en la carpeta [20190312_08_Taller06Naves](20190312_08_Taller06Naves) con los códigos y archivos fuente. El archivo con la información y requerimientos se encuentra dentro y se llama `talle 6OOP.pdf`.
+
+#### Taller # 7 - OOP - Aplicar herencia a un software de Zoológico
+**Estudiantes**
+>Erika Yamile Lache Blanco - 2140348
+>
+>Dairon Alexis Vallejo Vallejo - 2171996
+>
+>Jorge Saul Castillo Jaimes - 2111127
+
+El taller consistió en elaborar un software para un zoológico, diferenciar especies y clases de animanles que residen en este.
+
+**Archivos** Los podrás encontrar en la carpeta [20190315_09_Taller07Zoologico](20190315_09_Taller07Zoologico) con los códigos y archivos fuente. El archivo con la información y requerimientos se encuentra dentro y se llama `talle 7OOP.pdf`.
+
+#### Taller # 8 y 9 - OOP - Aplicar encapsulamiento y herencia para software universitario
+**Estudiantes**
+>Erika Yamile Lache Blanco - 2140348
+>
+>Dairon Alexis Vallejo Vallejo - 2171996
+>
+>Jorge Saul Castillo Jaimes - 2111127
+
+El taller consistió en elaborar un software para un zoológico, diferenciar especies y clases de animanles que residen en este.
+
+**Archivos** Los podrás encontrar en la carpeta [20190207_07_Taller08NominaBasica](20190207_07_Taller08NominaBasica) con los códigos y archivos fuente. Los archivos con la información y requerimientos se encuentran dentro y se llaman `talle 8OOP.pdf` y `talle 9OOP.pdf`.
