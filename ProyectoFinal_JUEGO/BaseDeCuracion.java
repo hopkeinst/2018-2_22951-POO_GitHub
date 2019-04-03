@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
 /**
  * Write a description of class BaseDeCuracion here.
  * 
@@ -15,5 +15,7 @@ public class BaseDeCuracion extends Construcciones
     public void act() 
     {
         // Add your action code here.
-    }    
+    } 
+    
+    
 }

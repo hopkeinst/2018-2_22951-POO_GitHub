@@ -19,6 +19,8 @@ public class world extends World
         super(1200, 700, 1);
         BaseDeCuracion bc = new BaseDeCuracion();
         addObject(bc, 580, 280);
+        Cementerio c = new Cementerio();
+        addObject(c, 0, 0);
         generarTerran();
         generarProtos();
 
@@ -31,21 +33,21 @@ public class world extends World
         int rgp = ( 100- (35 +rcp + rmp) );
         int i,j,k;
 
-        for(  i=1; i<=(15+rcp); i++){
+        for(  i=1; i<=(rcp); i++){
             ConstructorProto cp = new ConstructorProto();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);
             addObject( cp, 1000 + x , 100 + y );
         }
 
-        for( j=1; j<=(20+rmp); j++){
+        for( j=1; j<=(rmp); j++){
             MedicoProto mp = new MedicoProto();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);
             addObject( mp, 1000 + x , 300 + y );
         }
 
-        for( k=1; k<=rgp; k++){
+        for( k=1; k<=5; k++){
             GuerreroProto gp = new GuerreroProto();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);
@@ -62,21 +64,21 @@ public class world extends World
         int rgt = ( 100- (35 + rct + rmt) );
         int i,j,k;
 
-        for( i=1; i<=(15+rct); i++){
+        for( i=1; i<=(rct); i++){
             ConstructorTerran ct = new ConstructorTerran();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);
             addObject( ct, 100 + x , 100 + y );   
         }
 
-        for( j=1; j<=(20+rmt); j++){
+        for( j=1; j<=(rmt); j++){
             MedicoTerran mt = new MedicoTerran();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);
             addObject( mt, 100 + x , 300 + y );
         }
 
-        for( k=1; k<=rgt; k++){
+        for( k=1; k<=3; k++){
             GuerreroTerran gt = new GuerreroTerran();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);

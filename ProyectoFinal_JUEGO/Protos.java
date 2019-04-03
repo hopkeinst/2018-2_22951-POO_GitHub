@@ -8,10 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Protos extends Actor
 {
-    public final int poblacion = 100;
+
     private int energia;
-    public int nPoblacion;
-    public int direccion;
     public int probabilidad;
 
     /**
@@ -26,7 +24,10 @@ public class Protos extends Actor
         noTocarMinaDeOro();
         mover();
 
-        this.energia += energia;
+    }
+
+    public Protos(){
+        energia = 100;
     }
 
     public void mover(){
@@ -58,21 +59,11 @@ public class Protos extends Actor
 
     }
 
-    public Protos(){
-        energia = 100;
-    }
+    
 
-    public int getEnergia(){
-        return energia;
-    }
+     
 
-    public void setEnergia( int energia ){
-    }
-
-    public int getPoblacion(){
-        return poblacion;
-    }
-
+    
     public void noTocarBaseCuraion(){
         Actor a = this.getOneIntersectingObject(BaseDeCuracion.class);
         if (a != null){
@@ -80,6 +71,7 @@ public class Protos extends Actor
             move(5);
         }
     }
+
     public void noTocarBarrera(){
         Actor a = this.getOneIntersectingObject(Barrera.class);
         if (a != null){
@@ -87,6 +79,7 @@ public class Protos extends Actor
             move(5);
         }
     }
+
     public void noTocarDeposito(){
         Actor a = this.getOneIntersectingObject(Deposito.class);
         if (a != null){
@@ -94,6 +87,7 @@ public class Protos extends Actor
             move(5);
         }
     }
+
     public void noTocarMinaDeGas(){
         Actor a = this.getOneIntersectingObject(MinaDeGas.class);
         if (a != null){
@@ -101,6 +95,7 @@ public class Protos extends Actor
             move(5);
         }
     }
+
     public void noTocarMinaDeOro(){
         Actor a = this.getOneIntersectingObject(MinaDeOro.class);
         if (a != null){
@@ -108,5 +103,14 @@ public class Protos extends Actor
             move(5);
         }
     }
+
     
+    public int getEnergia(){
+        return energia;
+    }
+
+    public void setEnergia( int energia ){
+        this.energia +=  energia;
+    }
+
 }

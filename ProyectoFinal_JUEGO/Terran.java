@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Terran extends Actor
 {
 
-    public final int poblacion = 30;
     private int energia;
     public int probabilidad;
 
@@ -19,14 +18,20 @@ public class Terran extends Actor
      */
     public void act() 
     {
-
         noTocarBaseCuraion();
         noTocarBarrera();
         noTocarDeposito();
         noTocarMinaDeGas();
         noTocarMinaDeOro();
+        //metodos para eliminar objetos
+       
+        
         mover();
     } 
+
+    public Terran(){
+        energia = 100;
+    }
 
     public void mover(){
         probabilidad = Greenfoot.getRandomNumber(100);
@@ -57,13 +62,12 @@ public class Terran extends Actor
 
     }
 
-    public int getEnergia(){
-        return energia;
-    }
-
-    public void setEnergia( int energia ){
-        this.energia += energia;
-    }
+    
+    
+    
+    
+    
+    
 
     public void noTocarBaseCuraion(){
         Actor a = this.getOneIntersectingObject(BaseDeCuracion.class);
@@ -103,5 +107,13 @@ public class Terran extends Actor
             turn(180);
             move(5);
         }
+    }
+
+    public int getEnergia(){
+        return energia;
+    }
+
+    public void setEnergia( int energia ){
+        this.energia += energia;
     }
 }
