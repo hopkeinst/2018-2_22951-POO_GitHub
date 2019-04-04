@@ -12,8 +12,8 @@ public class ConstructorTerran extends Terran
      * Act - do whatever the ConstructorTerran wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int recurso;
-    
+    private int unidadesOroTerran;
+    private int unidadesGasTerran;
     public void act() 
     {
         super.act();
@@ -26,71 +26,75 @@ public class ConstructorTerran extends Terran
         ataqueConstructorProto();
         ataqueMedicoProto();
     }   
-    
+
     public ConstructorTerran(){
-        recurso = 0;
+        unidadesOroTerran = 0;
+        unidadesGasTerran = 0;
     }
 
     public void curacionMedico(){
         Actor a = this.getOneIntersectingObject(MedicoTerran.class);
-
         if (a != null){
             int aumentoCura = 20;
-
             if(getEnergia() < 160){
-
                 if(getEnergia()+20 > 160){
                     int x = (getEnergia()+20) - 160;
                     aumentoCura = 20-x;
                 }
-
                 setEnergia(aumentoCura);
             }
-
         }
     }
-    
+
     public void curacionDeposito(){
         Actor a = this.getOneIntersectingObject(Deposito.class);
-
         if (a != null){
             int aumentoCura = 20;
-
             if(getEnergia() < 160){
-
                 if(getEnergia()+20 > 160){
                     int x = (getEnergia()+20) - 160;
                     aumentoCura = 20-x;
                 }
-
                 setEnergia(aumentoCura);
             }
-
         }
     }
-    
-    
+
     public void entregarRecurso(){
         Actor a = this.getOneIntersectingObject(Deposito.class);
         if (a != null){
-            setRecurso(0);
+            SetUnidadesOroTerran(0);
         }
     }
-public void recogerGas(){
-         Actor a = this.getOneIntersectingObject(MinaDeGas.class);
+
+    public void recogerGas(){
+        Actor a = this.getOneIntersectingObject(MinaDeGas.class);
         if (a != null){
-            setRecurso(35);
+            SetUnidadesGasTerran(50);
         }
     }
-    
+
     public void recogerOro(){
-         Actor a = this.getOneIntersectingObject(MinaDeOro.class);
+        Actor a = this.getOneIntersectingObject(MinaDeOro.class);
         if (a != null){
-            setRecurso(35);
+            int x = 30;
+            MinaDeOro mo = new MinaDeOro();
+            // si la mina de oro no tiene las 30 unidades de oro solo dara las que tenga 
+            //si no tiene  no entregara nada al constructor
+            if(mo.getUnidadesDeMinaOro()>0){ 
+
+                if(mo.getUnidadesDeMinaOro()-30 <0){
+                    int b = x-(mo.getUnidadesDeMinaOro()-30);
+                }
+                SetUnidadesOroTerran(x);
+            }
+
+            if(mo.getUnidadesDeMinaOro() == 0){
+                SetUnidadesOroTerran(getunidadesOroTerran());       
+            }
         }
     }
-    
-    
+
     public void ataqueGuerreroProto(){
         Actor a = this.getOneIntersectingObject(GuerreroProto.class);
         if (a != null){
@@ -117,13 +121,21 @@ public void recogerGas(){
             setEnergia(-daño);
         }
     }
-    
-    public int getRecurso(){
-        return recurso;
+
+    public int getunidadesOroTerran(){
+        return unidadesOroTerran;
     }
 
-    public void setRecurso(int recurso){
-        this.recurso = recurso;
+    public void SetUnidadesOroTerran(int unidadesOroTerran){
+        this.unidadesOroTerran = unidadesOroTerran;
     }
-    
+
+    public int getUnidadesGasTerran(){
+        return unidadesGasTerran;
+    }
+
+    public void SetUnidadesGasTerran(int unidadesGasTerran){
+        this.unidadesGasTerran = unidadesGasTerran;
+    }
+
 }

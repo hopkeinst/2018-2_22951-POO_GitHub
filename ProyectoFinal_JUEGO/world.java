@@ -78,7 +78,7 @@ public class world extends World
             addObject( mt, 100 + x , 300 + y );
         }
 
-        for( k=1; k<=3; k++){
+        for( k=1; k<=5; k++){
             GuerreroTerran gt = new GuerreroTerran();
             int x = Greenfoot.getRandomNumber(100);
             int y = Greenfoot.getRandomNumber(100);

@@ -38,9 +38,11 @@ public class GuerreroTerran extends Terran
                 setEnergia(aumentoCura);
             }
 
+     
         }
     }
     
+     
     public void curacionDeposito(){
         Actor a = this.getOneIntersectingObject(Deposito.class);
 

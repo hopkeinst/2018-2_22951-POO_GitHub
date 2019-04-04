@@ -24,12 +24,15 @@ public class MedicoTerran extends Terran
         ataqueGuerreroProto();
         ataqueConstructorProto();
         ataqueMedicoProto();
+        
     }    
 
     public MedicoTerran(){
         setEnergia( 20);
 
     }
+    
+    
 
     public void lastimarCurarConstructor(){
         Actor a = this.getOneIntersectingObject(ConstructorProto.class);
@@ -74,6 +77,7 @@ public class MedicoTerran extends Terran
 
         }
     }
+    
     public void ataqueGuerreroProto(){
         Actor a = this.getOneIntersectingObject(GuerreroProto.class);
        if (a != null){

@@ -40,6 +40,8 @@ public class GuerreroProto extends Protos
         }
     }
     
+    
+    
      public void curacionDeposito(){
         Actor a = this.getOneIntersectingObject(Deposito.class);
 
@@ -58,6 +60,7 @@ public class GuerreroProto extends Protos
 
         }
     }
+    
     public void ataqueGuerreroTerran(){
         Actor a = this.getOneIntersectingObject(GuerreroTerran.class);
 
